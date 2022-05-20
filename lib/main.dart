@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rotas_pilha/cadastro.dart';
 import 'package:rotas_pilha/home.dart';
+import 'package:rotas_pilha/userMode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +18,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (RouteSettings setting) {
         if (setting.name == '/cadastro') {
+          final user = setting.arguments as User?;
           return MaterialPageRoute(
-            builder: (ctx) => CdastroView(),
+            builder: (ctx) => CdastroView(user: user),
           );
         }
-        return null;
       },
       routes: {
         "/home": (ctx) => const HomeView(),
