@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:rotas_pilha/controller.dart';
 
 class CdastroView extends StatelessWidget {
   CdastroView({Key? key}) : super(key: key);
+
+  final controller = CadastroController();
   final nameController = TextEditingController();
   final idadeController = TextEditingController();
 
@@ -39,7 +42,14 @@ class CdastroView extends StatelessWidget {
                 height: 10,
               ),
               OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  final listUsers = controller.addUser(
+                      nome: nameController.text, idade: idadeController.text);
+
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      '/home', (route) => false,
+                      arguments: listUsers);
+                },
                 child: const Text('Cadastrar'),
               )
             ],
