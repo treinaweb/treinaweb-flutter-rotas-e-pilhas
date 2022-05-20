@@ -25,8 +25,13 @@ class FlutterPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (ctx) => const MyHomePage()));
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => const FlutterPage(),
+                    ),
+                    (route) => true,
+                  );
                 },
                 child: const Text('Acessar'),
               ),
