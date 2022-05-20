@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rotas_pilha/home_page.dart';
 
 class TreinawebPage extends StatelessWidget {
   const TreinawebPage({Key? key}) : super(key: key);
@@ -23,7 +24,12 @@ class TreinawebPage extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
-                  onPressed: () {}, child: const Text('Acessar')),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => const MyHomePage()));
+                },
+                child: const Text('Acessar'),
+              ),
             )
           ],
         ),
