@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rotas_pilha/views/flutter_page.dart';
-import 'package:rotas_pilha/views/home_page.dart';
-import 'package:rotas_pilha/views/treinaweb.dart';
+import 'package:rotas_pilha/cadastro.dart';
+import 'package:rotas_pilha/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,28 +13,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (RouteSettings setting) {
-        if (setting.name == '/flutter') {
-          return MaterialPageRoute(builder: (ctx) => const FlutterPage());
+        if (setting.name == '/cadastro') {
+          return MaterialPageRoute(
+            builder: (ctx) => const CdastroView(),
+          );
         }
-
         return null;
       },
-      onGenerateInitialRoutes: (route) {
-        return [
-          MaterialPageRoute(builder: (ctx) => MyHomePage()),
-          MaterialPageRoute(builder: (ctx) => TreinawebPage()),
-          MaterialPageRoute(builder: (ctx) => FlutterPage()),
-        ];
-      },
       routes: {
-        "/home": (ctx) => MyHomePage(),
-        "/treinaweb": (ctx) => const TreinawebPage(),
+        "/home": (ctx) => const HomeView(),
       },
-      theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+      initialRoute: '/home',
     );
   }
 }
