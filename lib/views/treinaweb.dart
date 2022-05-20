@@ -7,18 +7,18 @@ class TreinawebPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final count =
-        ModalRoute.of(context)!.settings.arguments as ValueNotifier<int>;
+        ModalRoute.of(context)!.settings.arguments as ValueNotifier<int>?;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Treinaweb Page ${count.value}'),
+        title: Text('Treinaweb Page ${count?.value}'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Treinaweb Page ${count.value}',
+              'Treinaweb Page ${count?.value}',
               style: const TextStyle(fontSize: 30),
             ),
             const SizedBox(
@@ -28,7 +28,8 @@ class TreinawebPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/flutter');
+                  Navigator.pushNamed(context, '/flutter',
+                      arguments: 'valor do flutter');
                 },
                 child: const Text('Aceesar'),
               ),

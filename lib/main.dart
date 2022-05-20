@@ -15,15 +15,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: (RouteSettings setting) {
+        if (setting.name == '/flutter') {
+          return MaterialPageRoute(builder: (ctx) => const FlutterPage());
+        }
+
+        return null;
+      },
+      onGenerateInitialRoutes: (route) {
+        return [
+          MaterialPageRoute(builder: (ctx) => MyHomePage()),
+          MaterialPageRoute(builder: (ctx) => TreinawebPage()),
+          MaterialPageRoute(builder: (ctx) => FlutterPage()),
+        ];
+      },
       routes: {
         "/home": (ctx) => MyHomePage(),
         "/treinaweb": (ctx) => const TreinawebPage(),
-        "/flutter": (ctx) => const FlutterPage(),
       },
       theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      initialRoute: '/home',
     );
   }
 }
