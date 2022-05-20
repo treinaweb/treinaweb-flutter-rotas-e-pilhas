@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rotas_pilha/components/card.dart';
 import 'package:rotas_pilha/userMode.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,7 +19,13 @@ class HomeView extends StatelessWidget {
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.70,
-                child: Text(listUser?[0].nome ?? ''),
+                child: Column(
+                  children: listUser
+                          ?.map((user) =>
+                              CardName(name: user.nome, idade: user.idade))
+                          .toList() ??
+                      [],
+                ),
               ),
               OutlinedButton(
                 onPressed: () {
