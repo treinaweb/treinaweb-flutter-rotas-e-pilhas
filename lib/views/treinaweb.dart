@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rotas_pilha/home_page.dart';
+import 'package:rotas_pilha/views/flutter_page.dart';
 
 class TreinawebPage extends StatelessWidget {
   const TreinawebPage({Key? key}) : super(key: key);
@@ -25,9 +25,10 @@ class TreinawebPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => const FlutterPage()));
                 },
-                child: const Text('Voltar'),
+                child: const Text('Aceesar'),
               ),
             )
           ],

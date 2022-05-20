@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rotas_pilha/treinaweb.dart';
+import 'package:rotas_pilha/views/treinaweb.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
