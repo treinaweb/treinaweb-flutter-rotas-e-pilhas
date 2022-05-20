@@ -25,10 +25,7 @@ class MyHomePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => const TreinawebPage()));
+                  Navigator.pushNamed(context, '/treinaweb');
                 },
                 child: const Text('Acessar'),
               ),
