@@ -26,7 +26,10 @@ class FlutterPage extends StatelessWidget {
               child: OutlinedButton(
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
-                      context, '/home', (route) => false);
+                    context,
+                    '/home',
+                    (route) => false,
+                  );
                 },
                 child: const Text('Acessar'),
               ),

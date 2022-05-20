@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       routes: {
-        "/home": (ctx) => const MyHomePage(),
+        "/home": (ctx) => MyHomePage(),
         "/treinaweb": (ctx) => const TreinawebPage(),
         "/flutter": (ctx) => const FlutterPage(),
       },
       theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(),
+      initialRoute: '/home',
     );
   }
 }

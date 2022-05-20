@@ -6,17 +6,20 @@ class TreinawebPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final count =
+        ModalRoute.of(context)!.settings.arguments as ValueNotifier<int>;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Treinaweb Page'),
+        title: Text('Treinaweb Page ${count.value}'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Treinaweb Page',
-              style: TextStyle(fontSize: 30),
+            Text(
+              'Treinaweb Page ${count.value}',
+              style: const TextStyle(fontSize: 30),
             ),
             const SizedBox(
               height: 50,
