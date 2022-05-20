@@ -25,10 +25,9 @@ class TreinawebPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.8,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (ctx) => const MyHomePage()));
+                  Navigator.pop(context);
                 },
-                child: const Text('Acessar'),
+                child: const Text('Voltar'),
               ),
             )
           ],
