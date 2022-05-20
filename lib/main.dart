@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings setting) {
         if (setting.name == '/cadastro') {
           return MaterialPageRoute(
-            builder: (ctx) => const CdastroView(),
+            builder: (ctx) => CdastroView(),
           );
         }
         return null;
